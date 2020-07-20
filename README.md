@@ -1,2 +1,2 @@
-# Bullets-and-walls
-It is a good organisation.
+# p5.play-boilerplate
+Boiler plate for p5.play
