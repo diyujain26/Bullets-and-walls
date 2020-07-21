@@ -3,7 +3,7 @@ var bullet,speed,weight;
 function setup() {
     createCanvas(1600,400);
     bullet = createSprite(25, 200, 50, 50);
-    bullet.shapeColor = color(200,10,30);
+    bullet.shapeColor = color(218,165,32);
     wall = createSprite(1200,200,thickness,height/2)
     wall.shapeColor = color(80,80,80);
     speed = random(223,321);
@@ -13,7 +13,12 @@ function setup() {
 
 function draw() {
   background(200);
-     bullet.bounceOff(wall);
+     bullet.collide(wall);
+     if(bullet.isTouching(wall))
+     {
+        bullet.velocityX = 0;
+        bullet.x < 1100;
+     }
      bullet.velocityX = speed;  
   if(wall.x-bullet.x<(bullet.width+wall.width)/2)
   {
@@ -31,7 +36,7 @@ function draw() {
 
   if(deformation<100)
   {
-    bullet.shapeColor=color(0,255,0);
+    bullet.shapeColor=color(0,0,255);
   }
 
   }
